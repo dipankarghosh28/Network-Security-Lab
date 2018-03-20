@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+
+int main()
+{
+	char plaintext[50];
+	char ciphertext[50];
+	int i=0, j=0, count=0, len, rem;
+	int key;
+	printf("Enter the text to be encrypted: ");
+	scanf("%s", &plaintext);
+	
+	printf("Enter the depth: ");
+	scanf("%d", &key);
+	
+	len=strlen(plaintext);
+	int k=0;
+	
+	for(rem=0, j=0; rem<key; rem++)
+	{
+		for(i=0; i<len; i++)
+			{
+				if(i%key==rem)
+				{	//printf("value of i %d\n\n", i);
+					//printf("value of j %d\n\n", j);
+					//printf("value of rem %d\n\n", rem);
+					ciphertext[j]=plaintext[i];	
+					j++;
+				}
+			}
+	}
+				
+	ciphertext[j]='\0';
+	printf("\nCipher text after applying rail fence: ");
+	for(i=0; ciphertext[i]!='\0'; i++)
+		printf("%c", ciphertext[i]);
+
+	return 0;
+	
+}

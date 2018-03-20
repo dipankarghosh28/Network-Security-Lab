@@ -1,0 +1,42 @@
+#include <stdio.h>
+int main()
+{
+    char string4[80];
+    int  rotatorN;
+
+    printf("Enter String to be decrypted: ");
+    gets(string4);
+    printf("Enter key: ");
+    scanf("%i", &rotatorN);
+
+    int n = 0, rotateSwap = 0;
+
+    int i;
+    for(i=0; string4[i] != '\0'; i++)
+     {
+          if(string4[i] >='a' && string4[i] <='z')
+             {
+                n =string4[i]-'a';
+                if( rotatorN > n )
+                 {
+                    rotateSwap = rotatorN - n - 1;
+                    //string4[i] = 'a';
+                    string4[i] += 'z'-rotateSwap-1;
+                  }  
+               else
+                string4[i] -= rotatorN;
+
+
+               }
+       }
+
+      int j;
+      for(j = 0; string4[j] !='\0'; j++)
+        {
+             printf("%c", string4[j]);
+        }
+
+        printf("\n");
+
+        return 0;
+}

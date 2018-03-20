@@ -1,0 +1,27 @@
+#include<stdio.h>;
+#include<conio.h>;
+#include<string.h>;
+ int main()
+ {
+ 	int i, key,l, val;
+ 	char str[100];
+ 	char c[100];
+ 	char x,y;
+ 	printf("Please enter the message to be encrypted\n");
+ 	scanf("%s", &str);
+ 	printf("\n Please enter the key\n");
+ 	scanf("%d", &key);
+ 	strlen(str);
+ 	
+    for(i=0;i<l;i++)
+ 	{
+ 		x=str[i];
+ 		printf("%c", &x);
+ 		printf("%d", &x);
+ 		val=(x+key)%26;
+ 		//printf("%d", &val);
+ 		c[i]=(char)val;
+ 	}
+ 	//printf("the encrypted text is: %s", &c);
+ 	return 0;
+ }
